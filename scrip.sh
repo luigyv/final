@@ -6,8 +6,6 @@ echo "EXPOSE 8020 " >> Dockerfile
 echo "WORKDIR /home/app/" >> Dockerfile
 echo "COPY server.py . " >> Dockerfile
 echo "CMD python3 server.py" >> Dockerfile
-docker stop samrun
-docker rm samrun
 docker build -t sample .
 docker run -t -d -p 8020:8020 --name samrun sample
 docker ps -a
